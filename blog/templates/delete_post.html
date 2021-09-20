@@ -3,6 +3,7 @@
 {% block content %}
 
 {% if user.is_authenticated %}
+{% if user.id == post.author.id %}
 
 <h3>Delete: {{ post.title}}</h3>
 <form method="POST">
@@ -10,9 +11,15 @@
     {% csrf_token %}
     <small>Are you Sure??</small> <br>
     <button class="btn btn-primary">Delete</button>
+    <a href="{% url 'home' %}" class="btn btn-primary">Back</a>
 </form>
 
 {% else %}
 Error.......... Not signed in
+<a href="{% url 'home' %}" class="btn btn-primary">Back</a>
+{% endif %}
+{% else %}
+<h1>Not Allowed. Incorrect User Access</h1>
+<a href="{% url 'home' %}" class="btn btn-primary">Back</a>
 {% endif %}
 {% endblock %}

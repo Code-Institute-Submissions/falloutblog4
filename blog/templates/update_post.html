@@ -3,7 +3,7 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-
+{% if user.id == post.author.id %}
 <h1> Edit Post</h1>
 <form method="POST">
     <br>
@@ -13,6 +13,10 @@
 </form>
 {% else %}
 Error........ Not correct user
+{% endif %}
+{% else %}
+<h1>Not Allowed. Incorrect User Access</h1>
+<a href="{% url 'home' %}" class="btn btn-primary">Back</a>
 {% endif %}
 
 
