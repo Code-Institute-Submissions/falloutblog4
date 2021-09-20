@@ -13,3 +13,14 @@ class PostForm(forms.ModelForm):
             'author': forms.Select(attrs={'class': 'form-control'}),
             'content': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Enter Content Here'}),
         }
+
+
+class EditForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ('title', 'content')
+
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Title Here'}),
+            'content': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Enter Content Here'}),
+        }
