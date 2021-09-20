@@ -7,8 +7,10 @@
 <p> By: {{ post.author.first_name }} {{ post.author.last_name }}</p> <br>
 {{post.created_on}}
 <p>{{ post.content }}</p> <br>
+{% if user.is_authenticated %}
 <a href="{% url 'update-post' post.pk %}">Edit</a>
 <a href="{% url 'delete_post' post.pk %}">Delete</a>
+{% endif %}
 <a href="{% url 'home' %}" class="btn btn-primary">Back</a>
 
 

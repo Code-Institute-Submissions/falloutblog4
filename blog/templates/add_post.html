@@ -2,7 +2,7 @@
 {% block title %}Create Post{% endblock %}
 {% block content %}
 
-
+{% if user.is_authenticated %}
 
 <h1> Create A Post</h1>
 <form method="POST">
@@ -12,6 +12,10 @@
     <button class="btn btn-primary">Post</button>
 </form>
 
+{% else %}
+
+Error........ Not signed in 
+{% endif %}
 
 
 
