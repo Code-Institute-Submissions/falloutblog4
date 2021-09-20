@@ -9,7 +9,7 @@
 <div class="card" style="width: 18rem;">
     <img src="..." class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">{{ post.title }} <br> <small> {{post.created_on}} <br> {{ post.author }} <br> </small></h5>
+      <h5 class="card-title">{{ post.title }} <br> <small> <a href="{% url 'category' post.category %}">{{ post.category }}</a>  {{post.created_on}} <br> {{ post.author }} <br> </small></h5>
       <p class="card-text">{{ post.author.first_name }} {{ post.author.last_name }} <br> {{ post.content|slice:":100" }} 
       </p>
       <a href="{% url 'article-detail' post.pk %}" class="btn btn-primary">View Post</a>

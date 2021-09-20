@@ -36,4 +36,4 @@ class DeletePost(DeleteView):
 
 def CategoryView(request, cat):
     category_posts = Post.objects.filter(category=cat)
-    return render(request, 'categories.html', {'cat': cat})
+    return render(request, 'categories.html', {'cat': cat, 'category_posts': category_posts})
