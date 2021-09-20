@@ -12,6 +12,11 @@
     <button class="btn btn-primary">Post</button>
 </form>
 
+<script>
+    var name = "{{user.id}}";
+    document.getElementById('authorname').value = name;
+</script>
+
 {% else %}
 
 Error........ Not signed in 
