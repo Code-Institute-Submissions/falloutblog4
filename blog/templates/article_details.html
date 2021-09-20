@@ -6,7 +6,7 @@
 <h1>{{ post.title }}</h1>
 <p> By: {{ post.author.first_name }} {{ post.author.last_name }}</p> <br>
 {{post.created_on}}
-<p>{{ post.content }}</p> <br>
+<p>{{ post.content|safe }}</p> <br>
 {% if user.is_authenticated %}
 {% if user.id == post.author.id %}
 <a href="{% url 'update-post' post.pk %}">Edit</a>
