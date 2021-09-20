@@ -1,0 +1,4 @@
+<h1>{{ post.title }}</h1>
+<p> By: {{ post.author.first_name }} {{ post.author.last_name }}</p> <br>
+<p>{{ post.content }}</p> <br>
+<a href="{% url 'home' %}">Back</a>

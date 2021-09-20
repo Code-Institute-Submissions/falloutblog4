@@ -1,1 +1,15 @@
-<h1> Testing</h1>
+<h1> Posts</h1>
+{% for post in object_list %}
+    <ul>
+        
+        <li> 
+            <a href="{% url 'article-detail' post.pk %}">
+            {{ post.title }} <br> </a>
+            {{ post.author }} <br>
+            {{ post.author.first_name }}
+            {{ post.author.last_name }} <br>
+            {{ post.content }} 
+        </li>
+    </ul>
+
+{% endfor %}
