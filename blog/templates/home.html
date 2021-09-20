@@ -13,6 +13,7 @@
             {{ post.author }} <br>
             {{ post.author.first_name }}
             {{ post.author.last_name }} <br>
+            {{post.created_on}} <br>
             {{ post.content }} 
         </li>
         <a href="{% url 'update-post' post.pk %}">Edit</a>
