@@ -1,6 +1,6 @@
 from django import forms
 from .models import Post, Category
-
+from cloudinary.models import CloudinaryField
 
 choices = Category.objects.all().values_list('name', 'name')
 choice_list = []
@@ -12,7 +12,7 @@ for item in choices:
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'tag', 'intro', 'author', 'category', 'content')
+        fields = ('title', 'featured_image', 'tag', 'intro', 'author', 'category', 'content')
 
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Title Here'}),
